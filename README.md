@@ -52,14 +52,14 @@ cd Peer6 <br/>
 javac Peer6.java 
  
 ## Execution
-1. Start the file owner process, giving a listening port.
-2. Start five peer processes as:
-<b>file owner, peer itself, download neighbor(another peer’s port) </b>
-3. Each peer connects to the server’s listening port. The latter creates a new thread to upload one or several file chunks to the peer, while its main thread goes back to
+1. Start the `file owner` process, giving a listening port.
+2. Start the five peer processes as:
+<b>`file owner`, `peer itself`, `download neighbor`(another peer’s port) </b>
+3. Each `peer` connects to the server’s listening port.</br>The latter creates a ***new thread*** to upload one or several file chunks to the peer, while its main thread goes back to
 listening for new peers.
 4. After receiving chunk(s) from the file owner, the peer stores them as separate file(s)
 and creates a summary file, listing the IDs of the chunks it has.
-5. The peer then proceeds with two new threads, with one thread listening to its upload
+5. The peer then proceeds with ***two new threads***, with one thread listening to its upload
 neighbor to which it will upload file chunks, and the other thread connecting to its
 download neighbor.
 6. The peer requests for the chunk ID list from the download neighbor, compares with
@@ -73,7 +73,6 @@ receives such a request.
 # Post Completion:
 After completion the file will be downloaded to each of the peer. 
 Plus inside each Peer on Peer<id>Dir folder will be created where all the file chunks and a summary file which contains the chunk ids that the peer got from the owner will be present.
-A detailed demo video can be found as <b>demo.mp4</b> file.
 <img src="Demo_Complete.png" width="1000" height="750">
      
 
